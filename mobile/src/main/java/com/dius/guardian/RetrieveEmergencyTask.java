@@ -21,7 +21,7 @@ public class RetrieveEmergencyTask extends AsyncTask<String, Void, Emergency> {
     protected void makeHttpRequest() {
         Log.i("Main", "calling1");
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:5000")
+                .baseUrl("http://192.168.1.165:8080")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         NodeService service = retrofit.create(NodeService.class);
