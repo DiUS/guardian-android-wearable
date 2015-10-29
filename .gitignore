@@ -54,3 +54,6 @@ build/
 local.properties
 
 .gradle/
+
+wear/wear.iml
+.idea/misc.xml

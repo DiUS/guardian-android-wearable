@@ -4,7 +4,7 @@ import retrofit.Call;
 import retrofit.http.GET;
 
 public interface NodeService {
-    @GET("/users")
+    @GET("/dangerZone")
     Call<Emergency> emergency();
 
 }
