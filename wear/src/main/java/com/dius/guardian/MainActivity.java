@@ -43,6 +43,7 @@ public class MainActivity extends WearableActivity implements GoogleApiClient.Co
         setContentView(R.layout.activity_main);
         setAmbientEnabled();
 
+
         mContainerView = (BoxInsetLayout) findViewById(R.id.container);
         mButton = (Button) findViewById(R.id.okButton);
         mButton.setOnClickListener(new View.OnClickListener() {
