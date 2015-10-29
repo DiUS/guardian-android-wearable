@@ -12,13 +12,11 @@ import retrofit.Retrofit;
 
 public class RetrieveEmergencyTask extends AsyncTask<String, Void, Emergency> {
 
-
     protected Emergency doInBackground(String... urls) {
-        makeHttpRequest();
-        return null;
+        return makeHttpRequest();
     }
 
-    protected void makeHttpRequest() {
+    protected Emergency makeHttpRequest() {
         Log.i("Main", "calling1");
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.1.165:8080")
@@ -30,10 +28,12 @@ public class RetrieveEmergencyTask extends AsyncTask<String, Void, Emergency> {
             Response<Emergency> execute = emergencyCall.execute();
             Emergency emergency = execute.body();
             Log.i("Main", "My emergency " + emergency);
+            return emergency;
+
         } catch (IOException e) {
             Log.e("Main", "error " + e.getLocalizedMessage(), e);
         }
-        Log.i("Main", "Exiting " + emergencyCall);
+        return null;
     }
 
     protected void onPostExecute(Emergency emergency) {
