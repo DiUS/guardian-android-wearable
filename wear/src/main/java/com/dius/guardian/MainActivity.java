@@ -27,7 +27,6 @@ public class MainActivity extends WearableActivity implements GoogleApiClient.Co
     private static final String GUARDIAN_CAPABILITY_NAME = "guardian_foo";
     public static final String GUARDIAN_MESSAGE_PATH = "/guardian_foo";
 
-
     private GoogleApiClient mGoogleApiClient;
     private String transcriptionNodeId = null;
 
@@ -64,9 +63,9 @@ public class MainActivity extends WearableActivity implements GoogleApiClient.Co
 
     private void updateButton() {
         if (mGoogleApiClient.isConnected()) {
-            mButton.setBackgroundColor(getResources().getColor(R.color.red));
+            mButton.setBackground(getResources().getDrawable(R.drawable.roundedbutton));
         } else {
-            mButton.setBackgroundColor(getResources().getColor(R.color.grey));
+            mButton.setBackground(getResources().getDrawable(R.drawable.roundedbuttoninactive));
         }
     }
 
